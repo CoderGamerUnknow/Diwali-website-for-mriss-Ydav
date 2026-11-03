@@ -1,0 +1,668 @@
+.hindiRoom {
+  position: relative;
+  overflow: clip;
+  background:
+    radial-gradient(50vw 45vw at 12% 8%, rgba(126, 44, 38, 0.26), transparent 70%),
+    radial-gradient(46vw 42vw at 92% 82%, rgba(196, 129, 38, 0.14), transparent 72%),
+    linear-gradient(180deg, #0e0906 0%, #1a1009 48%, #0b0706 100%);
+}
+
+.watermark {
+  position: absolute;
+  top: 2%;
+  left: -0.06em;
+  color: transparent;
+  font-family: var(--font-hindi);
+  font-size: clamp(9rem, 30vw, 26rem);
+  line-height: 0.9;
+  opacity: 0.55;
+  -webkit-text-stroke: 1px rgba(242, 169, 59, 0.08);
+  pointer-events: none;
+  user-select: none;
+}
+
+.glow {
+  position: absolute;
+  top: 34%;
+  right: -8rem;
+  width: 38rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(242, 169, 59, 0.1), transparent 66%);
+  filter: blur(14px);
+  pointer-events: none;
+}
+
+.head {
+  position: relative;
+  z-index: 2;
+  max-width: 54rem;
+  margin-bottom: clamp(2.6rem, 6vw, 4.4rem);
+}
+
+.lead {
+  max-width: 54ch;
+}
+
+.panels {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+  align-items: start;
+  gap: clamp(1.2rem, 2.6vw, 2rem);
+}
+
+.panel {
+  position: relative;
+  min-width: 0;
+  border-radius: 10px;
+}
+
+.panelHead,
+.paperHead {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.panelKicker {
+  color: var(--gold);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.panelCount {
+  color: rgba(42, 26, 16, 0.45);
+  font-family: var(--font-hindi);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+/* ---------- The doha, on paper ---------- */
+.dohaCard {
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.4rem, 3vw, 2.1rem);
+  border: 1px solid rgba(74, 18, 32, 0.28);
+  background:
+    repeating-linear-gradient(
+      180deg,
+      transparent 0 2.55rem,
+      rgba(74, 18, 32, 0.075) 2.55rem calc(2.55rem + 1px)
+    ),
+    linear-gradient(150deg, #fdf5e4 0%, #f7e8ce 58%, #f1ddbd 100%);
+  box-shadow:
+    0 40px 90px -55px rgba(0, 0, 0, 0.95),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  color: var(--ink);
+}
+
+.dohaCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: clamp(2.5rem, 4vw, 3rem);
+  width: 1px;
+  background: rgba(160, 46, 46, 0.28);
+  pointer-events: none;
+}
+
+.dohaCard::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: 10px;
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgba(255, 255, 255, 0.5), transparent 60%),
+    radial-gradient(80% 60% at 0% 100%, rgba(180, 120, 50, 0.12), transparent 70%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.dohaBody {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  padding: clamp(1.2rem, 2.4vw, 1.9rem) 0 clamp(1rem, 2vw, 1.4rem);
+}
+
+.dohaMark {
+  display: block;
+  height: 1.6rem;
+  color: rgba(151, 96, 26, 0.6);
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  line-height: 0.7;
+}
+
+.dohaLines {
+  margin-top: 0.55rem;
+  color: #3a2114;
+  font-size: clamp(1.12rem, 1.9vw, 1.5rem);
+  line-height: 2.05;
+  text-wrap: balance;
+}
+
+.dohaLine {
+  display: block;
+  overflow: hidden;
+}
+
+.dohaLineInner {
+  display: inline-block;
+}
+
+.dohaSource {
+  margin-top: 0.9rem;
+  color: #8c4a2f;
+  font-family: var(--font-hindi);
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+}
+
+.dohaMeaning {
+  margin-top: 1rem;
+  color: rgba(42, 26, 16, 0.76);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.dohaNote {
+  margin-top: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed rgba(74, 18, 32, 0.2);
+  color: #8a5a3a;
+  font-family: var(--font-hand);
+  font-size: 1.22rem;
+  line-height: 1.35;
+}
+
+.dohaControls {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding-top: 1.05rem;
+  border-top: 1px solid rgba(74, 18, 32, 0.16);
+}
+
+.dohaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #7a4025;
+  font-size: 0.63rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.dohaButton:hover {
+  color: #2a1a10;
+}
+
+.dohaDots {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.dohaDot {
+  width: 1.4rem;
+  height: 2px;
+  background: rgba(42, 26, 16, 0.22);
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.dohaDotActive {
+  width: 2.1rem;
+  background: #a4531f;
+}
+
+/* ---------- The grammar paper ---------- */
+.paperCard {
+  padding: clamp(1.4rem, 3vw, 2.1rem);
+  border: 1px solid rgba(242, 169, 59, 0.22);
+  background:
+    radial-gradient(110% 80% at 100% 0%, rgba(242, 169, 59, 0.09), transparent 58%),
+    linear-gradient(160deg, rgba(253, 244, 227, 0.07), rgba(253, 244, 227, 0.015));
+  box-shadow:
+    0 40px 90px -58px rgba(0, 0, 0, 0.95),
+    inset 0 1px 0 rgba(253, 244, 227, 0.07);
+  backdrop-filter: blur(4px);
+}
+
+.paperHead {
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(242, 169, 59, 0.16);
+}
+
+.paperSub {
+  margin-top: 0.35rem;
+  color: var(--faint);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.paperMarks {
+  flex-shrink: 0;
+  padding: 0.3rem 0.65rem;
+  border: 1px solid rgba(242, 169, 59, 0.4);
+  border-radius: 999px;
+  color: var(--gold-bright);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+}
+
+.diyaRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 0.2rem;
+  margin: 1.1rem 0 1.3rem;
+}
+
+.paperDiya {
+  width: calc(100% / 5 - 0.4rem);
+  opacity: 0.32;
+  filter: grayscale(0.7);
+  transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s var(--ease-out);
+}
+
+.paperDiyaLit {
+  opacity: 1;
+  filter: none;
+  transform: translateY(-3px);
+}
+
+.questionNumber {
+  color: rgba(242, 169, 59, 0.6);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.question {
+  margin-top: 0.45rem;
+  color: var(--cream);
+  font-family: var(--font-hindi);
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.options {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(253, 244, 227, 0.12);
+  border-radius: 6px;
+  background: rgba(253, 244, 227, 0.03);
+  color: rgba(253, 244, 227, 0.82);
+  font-family: var(--font-hindi);
+  font-size: 0.95rem;
+  text-align: left;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s var(--ease-out);
+}
+
+.option:hover:not(:disabled) {
+  transform: translateX(3px);
+  border-color: rgba(242, 169, 59, 0.45);
+  background: rgba(242, 169, 59, 0.06);
+}
+
+.option:disabled {
+  cursor: default;
+}
+
+.optionLetter {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 1.45rem;
+  height: 1.45rem;
+  border: 1px solid rgba(242, 169, 59, 0.24);
+  border-radius: 50%;
+  color: rgba(242, 169, 59, 0.72);
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0;
+}
+
+.optionTick {
+  margin-left: auto;
+  color: var(--mint);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.optionCorrect {
+  border-color: rgba(169, 216, 180, 0.55);
+  background: rgba(169, 216, 180, 0.1);
+  color: #e9f7ec;
+}
+
+.optionCorrect .optionLetter {
+  border-color: rgba(169, 216, 180, 0.6);
+  color: var(--mint);
+}
+
+.optionWrong {
+  border-color: rgba(239, 127, 157, 0.5);
+  background: rgba(239, 127, 157, 0.08);
+  color: rgba(255, 227, 235, 0.9);
+}
+
+.optionMuted {
+  opacity: 0.45;
+}
+
+.feedback {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(242, 169, 59, 0.14);
+  animation: feedbackIn 0.5s var(--ease-out) both;
+}
+
+.feedbackGood {
+  color: var(--mint);
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+.feedbackSoft {
+  color: var(--gold-bright);
+  font-size: 0.86rem;
+  font-weight: 500;
+}
+
+.feedbackNote {
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+.nextButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.9rem;
+  padding: 0.5rem 0.95rem;
+  border: 1px solid rgba(242, 169, 59, 0.45);
+  border-radius: 999px;
+  color: var(--gold-bright);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.nextButton:hover {
+  background: rgba(242, 169, 59, 0.1);
+  border-color: rgba(242, 169, 59, 0.7);
+}
+
+.paperHint {
+  margin-top: 1rem;
+  color: rgba(253, 244, 227, 0.34);
+  font-size: 0.7rem;
+  line-height: 1.6;
+}
+
+.result {
+  padding-top: 0.4rem;
+  animation: feedbackIn 0.6s var(--ease-out) both;
+}
+
+.resultKicker {
+  color: var(--gold);
+  font-size: 0.58rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.resultScore {
+  margin-top: 0.4rem;
+  color: var(--gold-bright);
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.resultScore span {
+  color: rgba(253, 244, 227, 0.3);
+  font-size: 0.45em;
+}
+
+.resultLine {
+  margin-top: 0.8rem;
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.resultFoot {
+  margin: 0.6rem 0 1.1rem;
+  color: var(--faint);
+  font-size: 0.74rem;
+}
+
+.result :global(.text-link) {
+  font-size: 0.62rem;
+}
+
+/* ---------- Muhavare ---------- */
+.idioms {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(2.4rem, 5vw, 3.6rem);
+}
+
+.idiomsHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.idiomsNote {
+  max-width: 42ch;
+  color: var(--faint);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  text-align: right;
+}
+
+.idiomGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.idiomCard {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 2.4rem 1rem 1.05rem;
+  overflow: hidden;
+  border: 1px solid rgba(242, 169, 59, 0.16);
+  border-radius: 7px;
+  background: linear-gradient(150deg, rgba(253, 244, 227, 0.05), rgba(253, 244, 227, 0.012));
+  text-align: left;
+  transition: border-color 0.4s ease, background 0.4s ease;
+}
+
+.idiomCard:hover {
+  border-color: rgba(242, 169, 59, 0.4);
+  background: rgba(242, 169, 59, 0.05);
+}
+
+.idiomOpen {
+  border-color: rgba(242, 169, 59, 0.42);
+  background: rgba(242, 169, 59, 0.06);
+}
+
+.idiomText {
+  display: block;
+  color: var(--gold-bright);
+  font-size: clamp(1rem, 1.6vw, 1.16rem);
+  line-height: 1.5;
+}
+
+.idiomLiteral {
+  display: block;
+  margin-top: 0.25rem;
+  color: rgba(253, 244, 227, 0.35);
+  font-size: 0.7rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.idiomMeaning {
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  opacity: 0;
+  transition:
+    max-height 0.5s var(--ease-out),
+    opacity 0.4s ease,
+    margin-top 0.4s ease;
+}
+
+.idiomOpen .idiomMeaning {
+  max-height: 8rem;
+  margin-top: 0.55rem;
+  opacity: 1;
+}
+
+.idiomPlus {
+  position: absolute;
+  top: 0.95rem;
+  right: 1rem;
+  color: rgba(242, 169, 59, 0.55);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.footnote {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: clamp(2.2rem, 4vw, 3rem);
+  color: rgba(253, 244, 227, 0.32);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.footnote span {
+  color: rgba(242, 169, 59, 0.5);
+  font-size: 0.55rem;
+}
+
+@keyframes feedbackIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 960px) {
+  .panels {
+    grid-template-columns: 1fr;
+  }
+
+  .dohaCard::before {
+    left: 0.9rem;
+  }
+
+  .idiomGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .idiomsNote {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .idiomGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .head {
+    margin-bottom: 2.2rem;
+  }
+
+  .dohaCard {
+    padding: 1.2rem 1.05rem 1.2rem 1.7rem;
+  }
+
+  .dohaCard::before {
+    left: 0.75rem;
+  }
+
+  .option {
+    font-size: 0.9rem;
+    padding: 0.62rem 0.7rem;
+  }
+
+  .dohaControls {
+    gap: 0.5rem;
+  }
+
+  .dohaButton {
+    font-size: 0.56rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feedback,
+  .result {
+    animation: none;
+  }
+}
